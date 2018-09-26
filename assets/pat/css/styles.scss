@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+@import "../../../variables";
+
+/* GLOBAL CSS */
+
+body {
+    font-size: $pat-font-size;
+    font-family: $pat-font-stack;
+    background: $pat-bg;
+    color: $pat-text-color;
+    a,
+    .link-styling {
+        text-decoration: none !important;
+        color: $pat-accent-light;
+        &:hover {
+            color: $pat-accent-hover;
+        }
+    }
+    img {
+        vertical-align: initial;
+    }
+    h5,
+    h6 {
+        color: $pat-card-header-color;
+    }
+}
+
+//MOVE THESE
+.sidebar a:hover,
+.navbar a:hover {
+    @include pat-shadow(0.1);
+}
+
+//global styling for thumbnails
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    @include transition;
+    &:hover {
+        @include pat-shadow(0.1);
+    }
+    &.thumbnail-img {
+        background-image: url("https://images.pexels.com/photos/45718/pexels-photo-45718.jpeg?w=940&h=650&dpr=2&auto=compress&cs=tinysrgb");
+        background-repeat: no-repeat;
+        background-size: cover;
+        z-index: 95;
+        background-color: #fff;
+        background-blend-mode: luminosity, normal;
+    }
+    &.thumbnail-icon {
+        font-size: 60px;
+        line-height: 80px;
+        text-align: center;
+        z-index: 96;
+    }
+    svg {
+        margin-top: 10px;
+        width: 80%;
+        path {
+            @include icon-coloring;
+            @include transition;
+        }
+    }
+}
+
+.list-group-item:hover,
+.option-card:hover,
+.card-header:hover {
+    .accent-icon,
+    .thumbnail {
+        @include pat-shadow(0.1);
+        color: $pat-icon-outline;
+    }
+}
+
+.active-video {
+    @include pat-shadow(0.1);
+    color: $pat-icon-outline;
+}
+
+.list-group-item:hover .thumbnail svg path,
+.option-card:hover .thumbnail svg path,
+.active-video svg path {
+    fill: $pat-icon-outline;
+}
+
+.card-header {
+    min-height: 55px;
+    @media (max-width: 991px) {
+        input {
+            width: 50vw;
+        }
+    }
+    h5 {
+        line-height: 55px;
+        color: $pat-card-header-color;
+    }
+}
+
+.accent-icon {
+    width: 40px;
+    height: 40px;
+    @include pat-full-border;
+    border-radius: 5px;
+    line-height: 39px;
+    text-align: center;
+    font-size: $pat-card-header-font-size;
+    color: $placeholder;
+    @include transition;
+}
+
+main {
+    .trophy-card,
+    .card-columns,
+    .info-card {
+        max-width: 800px;
+        margin: 0 auto;
+        display: block;
+        width: 95%;
+        @include pat-shadow(0.1);
+        .card-header {
+            background: $pat-card-header;
+            min-height: 55px;
+            h5 {
+                line-height: 55px;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+            input {
+                width: 20vw;
+            }
+        }
+    }
+    .card {
+        background: $card;
+        border: $pat-border-abb;
+    }
+    .caption {
+        font-size: $pat-caption-desc-font-size;
+        width: 50%;
+        h6 {
+            font-size: $pat-caption-title-font-size;
+            padding-bottom: 0px;
+            margin-bottom: 0px;
+        }
+    }
+    .nav-pills .nav-item .nav-link {
+        margin-left: 5px;
+        margin-right: 5px;
+        @include pat-full-border;
+        border-radius: 5px;
+        &:hover,
+        &:active {
+            background-color: $pat-accent-light !important;
+            @include pat-shadow(0.1);
+            color: $pat-inverse;
+        }
+    }
+    // canvas {
+    //     // height: 65vw !important;
+    //     width: 65vw !important;
+    //     max-width: 700px !important;
+    //     max-height: 700px !important;
+    //     margin: 0 auto;
+    // }
+    .card-block .table-responsive {
+        overflow: auto;
+    }
+    .option-card {
+        @include transition;
+        &:hover {
+            @include pat-shadow(0.1);
+        }
+        .card-header {
+            background: $pat-option-card-header;
+            border-bottom: 0;
+        }
+    }
+}
+
+input {
+    @media (min-width: 778px) {
+        font-size: 15px !important;
+    }
+    &[type="text"],
+    &[type="number"],
+    &[type="text"] {
+        &:hover {
+            @include pat-shadow(0.15);
+        }
+    }
+}
+
+.bars {
+    .progress {
+        border-radius: 10px !important;
+        height: 30px;
+        margin: 20px 10px 20px 10px;
+        width: 100%;
+        display: inline-block;
+        line-height: 100%;
+        .progress-bar {
+            display: block;
+            height: 30px;
+            color: $progress-bar-text-color;
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+            font-weight: bold;
+            line-height: 30px;
+            overflow: visible;
+            white-space: nowrap;
+            background: $pat-icon-fill;
+            border: 2px solid $pat-icon-outline;
+        }
+        .col-4 {
+            display: flex;
+            align-items: center;
+            .bar-label {
+                height: auto;
+                vertical-align: top;
+                margin-top: 25px;
+                line-height: 20px;
+                display: inline-block;
+                font-weight: 500;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+.data-entry {
+    .form-group:hover {
+        input,
+        .input-group-text,
+        .slider {
+            border-radius: 5px;
+            @include pat-shadow(0.1);
+        }
+    }
+    .input-group-append,
+    .input-group-prepend {
+        z-index: 90;
+    }
+    .face svg {
+        margin-left: -5px;
+        margin-top: 5px;
+    }
+    .slider-container {
+        .noUi-tooltip {
+            background: transparent !important;
+            border: 0;
+            color: $inverse;
+            width: 50px;
+            height: 50px;
+            margin-bottom: -65px;
+            path {
+                stroke: $pat-inverse;
+            }
+        }
+        .noUi-horizontal {
+            height: 38px;
+            width: 100%;
+            margin-top: -16px;
+        }
+        .feeling {
+            width: 80%;
+            .noUi-tooltip {
+                margin-bottom: -61px;
+            }
+        }
+        .intensity {
+            .noUi-tooltip {
+                margin-bottom: -67px;
+            }
+        }
+        .input-group-text {
+            max-width: 50px;
+            max-height: 38px;
+        }
+    }
+    .entry-arrows {
+        background: transparent;
+        svg {
+            width: 30px !important;
+            height: 30px;
+            padding: 2px;
+            border-radius: 2px;
+        }
+    }
+}
+
+html:not([dir="rtl"]) {
+    .noUi-horizontal {
+        .noUi-handle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background: $pat-accent-light;
+            outline: none;
+            @include pat-full-border;
+            &:before,
+            &:after {
+                content: "";
+                display: none;
+            }
+        }
+    }
+}
+
+//global styling for trophy icons
+.trophy {
+    text-align: center;
+    padding: 10px;
+    width: 20vw;
+    max-width: 200px;
+    @include transition;
+    &:hover {
+        @include pat-shadow(0.1);
+        svg path {
+            @include inverse-icon-coloring;
+        }
+    }
+    .trophy-caption {
+        font-size: $pat-caption-desc-font-size;
+        word-wrap: break-word;
+    }
+    svg {
+        font-size: 3em;
+        path {
+            @include icon-coloring;
+            @include transition;
+        }
+    }
+}
+
+//makes sure date form fills width of container
+app-date-form {
+    display: block;
+    width: 100%;
+}
+
+//ensures that mobiscroll dateforms do not look disabled
+.form-control.date-form {
+    &:disabled,
+    &:read-only {
+        background: white !important;
+    }
+}
+
+//colors the smiley faces' eyes in the history table
+.history-table path[fill="#fff"] {
+    fill: black !important;
+}
+
+.selected-list {
+    .c-btn {
+        box-shadow: none !important;
+        @include transition;
+        &:hover,
+        &:focus {
+            @include pat-shadow-important(0.1);
+        }
+    }
+}
+
+//multiselect boxes
+.multiselect {
+    .c-token {
+        background: $pat-tag-color !important;
+    }
+    .pure-checkbox {
+        label::before {
+            border-color: $pat-checkbox-color !important;
+        }
+        input[type="checkbox"]:checked {
+            +label {
+                &:before,
+                &:after {
+                    background: $pat-checkbox-color !important;
+                }
+            }
+        }
+    }
+}
+
+//buttons
+.btn-primary {
+    color: $inverse;
+    background-color: $pat-button-bg;
+    border-color: $pat-button-bg;
+    &:hover {
+        background-color: $pat-button-hover-bg;
+        border-color: $pat-button-hover-border;
+    }
+}
+
+.text-primary {
+    color: $pat-accent-light !important;
+}
