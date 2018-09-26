@@ -1,0 +1,495 @@
+@import "../../../variables";
+
+html {
+  min-height: 100%;
+}
+
+body {
+  background-color: $prov-bg;
+  color: $prov-text-color;
+  font-family: $prov-font-stack;
+  font-size: $prov-font-size;
+}
+
+a,
+a:hover,
+a:focus,
+.btn-link,
+.link-color {
+  @include transition;
+  color: $prov-accent-dark;
+  text-decoration: none !important;
+}
+
+.link-color {
+  font-weight: 600;
+}
+
+main {
+  margin-top: 60px;
+  height: calc(100vh - 60px);
+  width: 100vw;
+  overflow: hidden;
+  background-color: $prov-bg;
+  @include fadeOnLoad;
+
+  .content-container {
+    width: 100%;
+    overflow: auto;
+    padding-top: 1rem;
+    // @media (max-width:768px) {
+    //   padding-left:0;
+    //   padding-right:0;
+    // }
+
+    .full-dash {
+      padding-top: 20px;
+      height: 100%;
+    }
+  }
+
+  .header-title {
+    font-size: 25px;
+    color: $prov-accent-dark;
+  }
+}
+
+.text-primary {
+  color: $prov-accent-dark;
+}
+
+.text-bright {
+  color: $prov-accent-light;
+}
+
+.card {
+  @include prov-shadow(0.1);
+  // max-width: 1000px;
+  background: $prov-card;
+  border-color: $prov-border;
+  border-width: $prov-border-width;
+
+  .card-header {
+    background: $prov-card-header;
+  }
+}
+
+.fluid-container {
+  position: fixed;
+  bottom: 0;
+  z-index: -1;
+}
+
+.SumoSelect,
+.form-control,
+.option-btns .btn {
+  @include prov-shadow(0.07);
+  font-size: $font-size;
+}
+
+.SumoSelect:focus,
+.form-control:focus {
+  box-shadow: none;
+}
+
+.btn-link:hover {
+  text-decoration: none;
+}
+
+.option-btns .btn-default {
+  background: $prov-accent-dark;
+  color: $inverse;
+}
+
+.user-image {
+  float: left;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  margin-top: -2px;
+}
+
+td.child {
+  max-width: calc(100vw - 70px);
+}
+
+.child ul {
+  max-width: 100%;
+}
+
+.parent {
+  max-width: 100%;
+}
+
+.info {
+  max-width: calc(100vw - 70px);
+  overflow: auto;
+}
+
+.p-list {
+  .table {
+   
+    transition: 2s opacity;
+  }
+
+  .dataTable.table {
+    opacity: 1 !important;
+    transition: 2s opacity;
+  }
+
+  table {
+    border: 0;
+    border-collapse: separate;
+    border-spacing: 0 0px;
+    border-bottom-color: $prov-border !important;
+  }
+
+  thead tr th {
+    border-bottom: $prov-border-width solid $border !important;
+    border-collapse: separate;
+    border-spacing: 5px 5px;
+  }
+
+  tbody {
+    tr#first td,
+    tr:last-child td {
+      border-top: $prov-border-width solid $prov-border !important;
+      border-collapse: separate;
+      border-spacing: 5px 5px;
+    }
+  }
+
+  .dataTables_filter {
+    float: none;
+    text-align: left;
+    top: 0;
+    label {
+      position: relative;
+      color: rgba(0, 0, 0, 0);
+      font-size: 0;
+      margin-bottom: 20px;
+      top: 0;
+      input {
+        font-size: 15px;
+        margin-left: 0;
+      }
+      input:hover {
+        background-color: $prov-card;
+      }
+      input:focus {
+        box-shadow: none;
+        color: $prov-text-color;
+        border: $prov-border-width solid $prov-border;
+        z-index: 1001;
+      }
+    }
+
+    label:before {
+      content: "Search...";
+      position: absolute;
+      left: 15px;
+      font-size: 13px;
+      top: 6px;
+      z-index: 1000;
+      color: $placeholder;
+      line-height: 25px;
+    }
+
+    input:not([value=""]) ~ label:before {
+      content: "";
+    }
+  }
+}
+
+.dataTables_filter label:after,
+.challenge-search:after {
+  @include search-icon;
+  path {
+    fill: $prov-text-color;
+  }
+}
+
+.dataTables_filter label input,
+.challenge-search {
+  @include filter;
+}
+
+.challenge-search {
+  min-width: 0;
+  width: 100%;
+  padding-left: 30px;
+}
+
+@media screen and (max-width: 640px) {
+  .dataTables_wrapper .dataTables_length,
+  .dataTables_wrapper .dataTables_filter {
+    float: none;
+    text-align: center;
+  }
+}
+
+.dataTables_wrapper {
+  .dataTables_paginate {
+    .paginate_button {
+      &.current,
+      &.current:hover,
+      &:hover {
+        @include accent-btn-important;
+        border: $prov-border-width solid $prov-border !important;
+      }
+    }
+  }
+}
+
+.table-responsive {
+  max-width: 100%;
+
+  .table {
+    width: 100% !important;
+  }
+}
+
+.p-list .dataTable.table {
+  opacity: 1 !important;
+  transition: 2s opacity;
+}
+
+/* SCSS Required for table animations */
+
+tr.child td.child {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  max-height: 0 !important;
+  overflow: hidden;
+  transition: 0.3s all;
+}
+
+tr.child {
+  line-height: 0;
+  transition: 0.3s all;
+}
+
+.parent + .child {
+  line-height: 22.5px;
+}
+
+.parent + tr.child td.child {
+  padding: 8px 10px !important;
+  max-height: auto !important;
+  overflow: visible !important;
+}
+
+tr.child li {
+  display: none;
+}
+
+//CSS required for tree
+.node-content-wrapper-active,
+.node-content-wrapper.node-content-wrapper-active:hover,
+.node-content-wrapper-active.node-content-wrapper-focused,
+.node-content-wrapper-active.node-content-wrapper-focused {
+  border-width: 0px;
+  @include accent-btn;
+
+  .badge-sky {
+    @include accent-btn-important;
+  }
+}
+
+.toggle-children-wrapper-collapsed .toggle-children {
+  -webkit-transform: rotate(0);
+  transform: rotate(0);
+}
+
+.toggle-children {
+  transition: 0.3s all;
+}
+
+.node-content-wrapper {
+  width: 100%;
+}
+
+$darker-accent: darken($prov-accent-dark, 5%);
+
+.btn-primary {
+  color: $inverse;
+  background: $prov-accent-dark;
+  border-color: $darker-accent;
+  @include prov-shadow(0.07);
+
+  &:hover {
+    background: darken($prov-accent-dark, 10%);
+    border-color: darken($darker-accent, 10%);
+  }
+}
+
+.btn-success {
+  color: $inverse;
+  background: $prov-accent-success;
+  border-color:  $prov-accent-success;
+  &:hover {
+    background: darken($prov-accent-success, 10%);
+    border-color:  darken($prov-accent-success, 10%);
+  }
+  @include prov-shadow(0.07);
+}
+
+$darker-accent-bright: darken($prov-accent-light, 5%);
+.btn-bright {
+  color: $inverse;
+  background: $prov-accent-light;
+  border-color: $darker-accent-bright;
+  @include prov-shadow(0.07);
+
+  &:hover {
+    background: darken($prov-accent-light, 10%);
+    border-color: darken($darker-accent-bright, 10%);
+  }
+}
+
+.field {
+  label {
+    max-height: 0px;
+    overflow: hidden;
+    position: relative;
+    max-width: 190px;
+    width: 100%;
+    line-height: 15px;
+    bottom: 0;
+    margin-top: -8px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 0 3px 0px 10px;
+    font-size: 11px;
+    color: $placeholder;
+    background: $prov-card-header !important;
+
+  }
+  input,
+  select, textarea {
+    max-width: 190px;
+    outline: none;
+    &:focus ~ label,
+    &:valid ~ label {
+      color: $prov-text-color;
+      font-weight: 600;
+      max-height: 15px;
+      border:1px solid $prov-border;
+      overflow:visible;
+    }
+  }
+
+  mobiscroll-datetime[ng-reflect-datetime-val] ~ label {
+    color: $inverse;
+    font-weight: 600;
+    max-height: 15px;
+  }
+
+  mobiscroll-datetime {
+    input[readonly] {
+      background: white !important;
+    }
+
+    .form-control:disabled,
+    .form-control[readonly] {
+      background: white !important;
+    }
+    &:not([ng-reflect-datetime-val]) {
+      input[type="date"] {
+        color: rgba(0, 0, 0, 0);
+        &:before {
+          content: attr(placeholder) !important;
+          color: $placeholder;
+          margin-right: 0.5em;
+        }
+      }
+    }
+  }
+  label {
+    transition-property: max-height, color;
+    -webkit-transition-property: max-height, color;
+    -moz-transition-property: max-height, color;
+    transition-duration: 0.3s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-timing-function: ease-in;
+    -webkit-transition-timing-function: ease-in;
+    -moz-transition-timing-function: ease-in;
+  }
+}
+
+//MOBISCROLL PLACEHOLDER SUPPORT FOR IE
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  mobiscroll-datetime input[type="date"].ng-untouched {
+    color: inherit !important;
+  }
+}
+
+.bars {
+  .progress {
+    border-radius: 10px !important;
+    height: 30px;
+    // margin: 20px 10px 20px 10px;
+    width: 100%;
+    display: inline-block;
+    line-height: 100%;
+    .progress-bar {
+      display: block;
+      height: 30px;
+      color: $progress-bar-text-color;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+      font-weight: bold;
+      line-height: 30px;
+      overflow: visible;
+      white-space: nowrap;
+      background: $prov-accent-light;
+    }
+
+    .col-4 {
+      display: flex;
+      text-align: center;
+      align-items: center;
+      margin-left: 0;
+      padding-left: 0;
+      .bar-label {
+        height: auto;
+        vertical-align: top;
+        text-align: center;
+        margin-top: 25px;
+        line-height: 20px;
+        display: inline-block;
+        font-weight: 500;
+        font-size: 12px;
+      }
+    }
+  }
+}
+
+.badge-sky,
+.node-content-wrapper-active {
+  background: $prov-accent-light !important;
+  border-width: 0px;
+  color: $inverse;
+}
+
+.badge-primary {
+  color: $inverse;
+  border-width: 0px;
+  background: $prov-accent-dark !important;
+}
+
+.challenge-search-icon {
+  position: absolute;
+  text-align: right;
+  margin-top: 10px;
+  z-index: 1005;
+  margin-left: 10px;
+}
+
+ .full-width {
+   width:100%;
+ }
+
+ 

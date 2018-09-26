@@ -1,0 +1,214 @@
+<div class="card info-card mb-4 mx-auto mt-5">
+    <div class="card-block d-flex flex-column">
+        <div class="mx-auto">
+            <ng-container >
+                <img class="profile-img shadow-hover">
+            </ng-container>
+        </div>
+
+        <h4 class="mx-auto mt-2 mb-3 d-inline text-center">
+            <ng-container>
+               Michelle Pine
+            </ng-container>
+        </h4>
+        <!-- <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">Enrollment Date: 00/00/0000 </li>
+            <li class="list-group-item">Discharge Date: 00/00/0000</li>
+            <li class="list-group-item">Date of Birth: 00/00/0000</li>
+        </ul> -->
+        <div class="card-block p-3 d-flex flex-column justify-content-center">
+            <div class="text-center p-1 pb-3"> Chosen intensity measurement:</div>
+            <div class="form-group mx-auto text-center">
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="option1"> Heart Rate
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="option1" checked> Borg Scale
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="option1" checked> Breathing
+                    </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" value="option1"> Intensity
+                    </label>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+
+
+
+
+</div>
+
+
+
+<div class="card info-card mb-4 mx-auto">
+    <div class="card-header d-flex align-items-center">
+        <h5>Your Progress</h5>
+        <div class="accent-icon ml-auto shadow-hover">
+            <a [routerLink]="['/progress']">
+
+                <i class="fas fa-expand"></i>
+
+            </a>
+        </div>
+    </div>
+
+
+    <div class="card-block mx-auto p-3 mb-3">
+      <radar-graph></radar-graph>>
+    </div>
+</div>
+
+
+<div class="card info-card mb-4 mx-auto">
+    <div class="card-header d-flex align-items-center">
+        <h5>Your Statistics</h5>
+        <div class="accent-icon ml-auto shadow-hover">
+            <a [routerLink]="['/progress/statistics']">
+                <i class="fas fa-expand"></i>
+            </a>
+        </div>
+    </div>
+    <div class="card-block px-3">
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <thead>
+                    <th>
+                        Exercise
+                    </th>
+                    <th>
+                        Workouts
+                    </th>
+                    <th>
+                        Personal Best
+                    </th>
+                </thead>
+                <tr>
+                    <td>
+                        Stretching
+                    </td>
+                    <td>
+                        75
+                    </td>
+                    <td>
+                        N/A
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Push-ups
+                    </td>
+                    <td>
+                        55
+                    </td>
+                    <td>
+                        60 reps
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Curl-Ups
+                    </td>
+                    <td>
+                        30
+                    </td>
+                    <td>
+                        90 reps
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Running
+                    </td>
+                    <td>
+                        26
+                    </td>
+                    <td>
+                        1 mile in 10 minutes
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Swimming
+                    </td>
+                    <td>
+                        8
+                    </td>
+                    <td>
+                        20 laps in 7 minutes
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+
+
+</div>
+
+<div class="card info-card mb-4 mx-auto">
+    <div class="card-header d-flex align-items-center">
+        <h5>Your Favorite Workouts</h5>
+    </div>
+
+    <ul class="list-group list-group-flush">
+
+        <li class="list-group-item p-3 d-flex align-items-center">
+            <div class="thumbnail thumbnail-icon mr-2">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="caption pl-2">
+                <h6>STRETCHING</h6>
+                Let's do it again now!
+            </div>
+            <div class="accent-icon ml-auto shadow-hover">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+        </li>
+
+        <li class="list-group-item p-3 d-flex align-items-center">
+            <div class="thumbnail thumbnail-icon mr-2">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="caption pl-2">
+                <h6>PUSH-UPS</h6>
+                Let's do it again now!
+
+            </div>
+            <div class="accent-icon ml-auto shadow-hover">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+        </li>
+        <li class="list-group-item p-3 d-flex align-items-center">
+            <div class="thumbnail thumbnail-icon mr-2">
+                <i class="fas fa-star"></i>
+            </div>
+            <div class="caption pl-2">
+                <h6>CURL-UPS</h6>
+                Let's do it again now!
+
+            </div>
+            <div class="accent-icon ml-auto shadow-hover">
+                <i class="fas fa-arrow-right"></i>
+            </div>
+
+        </li>
+    </ul>
+
+</div>

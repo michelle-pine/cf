@@ -1,0 +1,32 @@
+<a (click)="dateService.allowWeeklySelection($event)" [routerLink]="['/workout/select-activity']">
+  <div class="card info-card mb-4 mx-auto mt-3 option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-2">
+              <i class="fas fa-calendar-alt fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>Weekly Workout</h6>
+              Record a set of these exercises for the whole week.
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>
+<a href="#" (click)="dateService.disableWeeklySelection($event)" [routerLink]="['/workout/select-activity']" >
+  <div class="card info-card mb-4 mx-auto option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-2">
+              <i class="fas fa-calendar-check fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>Single Workout</h6>
+              Record a single instance of this workout
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>

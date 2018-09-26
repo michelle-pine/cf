@@ -1,0 +1,45 @@
+@import "../../variables";
+
+.navbar {
+  border-bottom: $pat-border-abb;
+  z-index: 100;
+  height:50px;
+  @include pat-shadow(0.1);
+  position: fixed;
+  color: $pat-nav-font-color;
+  background: $pat-nav-bg;
+  .navbar-brand {
+    font-size: 15px;
+    color: $pat-nav-font-color;
+    margin: 0px 0px;
+    .navbar-brand-logo {
+      height: 35px;
+      color: $pat-nav-font-color;
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      max-height: 100%;
+      overflow: hidden;
+      img {
+        width: 200px;
+     
+        @media (min-width:768px) {
+          padding-right:5px;
+          border-right:2px solid $pat-accent-light;
+        }
+      }
+    }
+    @media (max-width: 768px) {
+      margin-left: -35px;
+    }
+  }
+  #navbarNavAltMarkup {
+    img {
+      height: 30px;
+      width: 30px;
+    }
+  }
+  #toggler {
+    cursor: pointer;
+  }
+}

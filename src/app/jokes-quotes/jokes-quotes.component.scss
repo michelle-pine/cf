@@ -1,0 +1,14 @@
+
+.quotation,
+.joke {
+    display: inline;
+    font-size: 20px;
+}
+
+.quote-sect {
+    display: inline;
+    svg {
+        display: inline!important;
+        vertical-align: text-top;
+    }
+}

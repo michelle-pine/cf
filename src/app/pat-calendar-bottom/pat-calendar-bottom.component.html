@@ -1,0 +1,105 @@
+<div class="calendar align-self-end">
+    <a (click)="setToday($event)" class="select-today">
+        today
+    </a>
+    <div class="cal-options">
+        <a class="{{addedMinClass}}" (click)="minimize($event)">
+            <i class="fas fa-minus"></i>
+        </a>
+        <a class="{{addedMaxClass}}" (click)="maximize($event)">
+            <i class="fas fa-expand"></i>
+        </a>
+    </div>
+    <div class="small-cal {{addedSmallClass}}" id="small-cal">
+        <div class="current-month">
+            &nbsp;
+            <a (click)="backward($event)" class="yesterday arrow">
+                <i class="fa fa-chevron-left"></i>
+            </a>
+            <h5 (click)="goToWorkout($event)" class="{{cal3.type}}">
+                {{cal3.html}}
+            </h5>
+            <a (click)="forward($event)" class="tomorrow arrow">
+                <i class="fa fa-chevron-right"></i>&nbsp;</a>
+        </div>
+    </div>
+    <div class="medium-cal {{addedMedClass}}" id="medium-cal">
+        <div class="row d-flex align-items-baseline">
+            <div class="row d-flex align-items-baseline mx-auto">
+                <div class="current-month">
+                    <h5>
+                        {{month}} {{year}}
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="days d-flex px-3 justify-content-center align-items-baseline">
+
+            <div class="day d-flex justify-content-center align-items-center">Sun</div>
+            <div class="day d-flex justify-content-center align-items-center">Mon</div>
+            <div class="day d-flex justify-content-center align-items-center">Tue</div>
+            <div class="day d-flex justify-content-center align-items-center">Wed</div>
+            <div class="day d-flex justify-content-center align-items-center">Thur</div>
+            <div class="day d-flex justify-content-center align-items-center">Fri</div>
+            <div class="day d-flex justify-content-center align-items-center">Sat</div>
+        </div>
+        <div class="dates d-flex px-3 justify-content-center align-items-baseline">
+            <a (click)="backward($event)" class="prev-week arrow">
+                <i class="fa fa-chevron-left"></i>
+            </a>&nbsp;
+            <ng-container *ngFor="let date of cal2" >
+                <div (click)="selectDate($event, date.month, date.date, date.year);goToWorkout($event)" class="{{date.type}}">{{date.html}}</div>
+            </ng-container>
+            <a (click)="forward($event)" class="next-week arrow">
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
+
+
+
+
+    </div>
+
+
+    <div class="calendar_container row d-flex justify-content-center {{addedBigClass}}">
+        <div id="big-calendar-inner">
+
+            <div class="current-month">
+                <h5>
+                    <a (click)="backward($event)" class="prev-week arrow">
+                        <i class="fa fa-chevron-left"></i>
+                    </a>&nbsp; {{month}}, {{year}} &nbsp;
+
+                    <a (click)="forward($event)" class="next-week arrow">
+                        <i class="fa fa-chevron-right"></i>
+                    </a>
+                </h5>
+            </div>
+            <table id="calendar" class="table">
+                <thead class="calendar-header">
+                    <th class="calendar-header-day">Sun</th>
+                    <th class="calendar-header-day">Mon</th>
+                    <th class="calendar-header-day">Tue</th>
+                    <th class="calendar-header-day">Wed</th>
+                    <th class="calendar-header-day">Thu</th>
+                    <th class="calendar-header-day">Fri</th>
+                    <th class="calendar-header-day">Sat</th>
+                </thead>
+                <tbody (click)="goToWorkout($event)" >
+                <ng-container *ngFor="let week of cal1">
+                    <tr>
+                        <ng-container *ngFor="let date of week">
+                            <td (click)="selectDate($event, date.month, date.date, date.year)" class="{{date.type}}">{{date.html}}</td>
+                        </ng-container>
+
+
+                    </tr>
+                </ng-container>
+            </tbody>
+
+            </table>
+
+
+        </div>
+    </div>
+</div>

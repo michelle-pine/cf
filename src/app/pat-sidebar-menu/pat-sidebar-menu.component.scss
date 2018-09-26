@@ -1,0 +1,59 @@
+@import "../../variables";
+
+.sidebar {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+  height: calc(100vh - 45px);
+  padding: 0;
+  padding-top: 10px;
+  @include pat-shadow(0.1);
+  background: $pat-sidebar-bg;
+  max-width: 200px;
+  @include transition;
+  overflow-y: hidden;
+  @media (max-width: 768px) {
+    margin-left: -200px;
+  }
+  &.viewable {
+    margin-left: 0px;
+  }
+  .user {
+    .user-image {
+      width:20px;
+      height:20px;
+    }
+  
+  }
+ 
+  .sidebar-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 45px;
+    height: calc(100vh - 45px);
+    padding-top: 0.5rem;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .nav-link {
+      font-weight: 500;
+      color: $sidebar-color;
+      @include transition;
+
+      &:hover:not(.user) {
+        background: $pat-sidebar-link-hover-bg;
+        color: $inverse;
+      }
+
+      &.active:not(.user) {
+        background: transparent;
+        color: $pat-sidebar-active-color;
+        &:hover {
+            cursor:default;
+        }
+      }
+    }
+  }
+}

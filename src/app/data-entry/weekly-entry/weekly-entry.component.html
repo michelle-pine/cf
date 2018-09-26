@@ -1,0 +1,88 @@
+<div class="card info-card mb-4 mx-auto data-entry">
+    <div class="custom-progress" style="background: linear-gradient(to right,rgba(0, 123, 255, 1) 0%,rgba(0, 123, 255, 1) 27%, rgba(255,255,255,1) 27%);"></div>
+    <div class="card-header d-flex align-items-center">
+        <h5>Walking &nbsp;
+            <span class="badge badge-secondary">Weekly</span>&nbsp;(1 / 5)</h5>
+        <a [routerLink]="['/workout/select-activity']" class="ml-auto">
+            <div class="btn btn-primary small-btn">Pick Other</div>
+        </a>
+    </div>
+    <div class="card-block p-4">
+        <form>
+
+            <div class="form-group row mb-2">
+                <label for="workoutFrequency" class="col-form-label col-sm-4 mb-1">How many times did you try this workout?</label>
+                <div class="col-sm-8">
+                    <input type="number" class="form-control" id="workoutFrequency">
+                </div>
+            </div>
+            <div class="form-group row mb-3">
+                <label for="intensity" class="col-form-label col-sm-4">How intense were these workouts?</label>
+                <div class="col-sm-8">
+                    <div class="input-group mb-2 d-flex flex-nowrap slider-container intensity">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon2">6</span>
+                        </div>
+                        <nouislider name="intensity" class="intensity" style="width:100%; z-index:95;" [config]="slider.intensityOption" [(ngModel)]="intensity"></nouislider>
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">10</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="workoutFrequency" class="col-sm-4 col-form-label">How long was each workout of this type?</label>
+                <div class="col-sm-8">
+                    <div class="input-group mb-3">
+                        <input type="number" class="form-control">
+                        <div class="input-group-append">
+                            <span class="input-group-text" id="basic-addon2">minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row mb-3 feeling">
+                <label for="feeling" class="col-form-label col-sm-4">How did you feel after these workouts?</label>
+                <div class="col-sm-8">
+                    <div class="input-group mb-2 d-flex flex-nowrap slider-container">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text face" id="sad-face">
+                                <app-smiley-left></app-smiley-left>
+                            </span>
+                        </div>
+                        <nouislider name="feeling" class="feeling" style="width:100%; z-index:95;" [config]="slider.feelingOption" [(ngModel)]="workoutFeeling"></nouislider>
+                        <div class="input-group-append face">
+                            <span class="input-group-text" id="happy-face">
+                                <app-smiley-right></app-smiley-right>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="noteSection" class="col-form-label col-sm-4">Workout Notes</label>
+                <div class="col-sm-8">
+
+
+                    <textarea class="form-control" id="notSection" rows="3"></textarea>
+
+                </div>
+
+            </div>
+
+
+        </form>
+    </div>
+    <ul class="list-group list-group-flush entry-arrows">
+        <li class="list-group-item d-flex align-items-center">
+            <a routerLink="/workout/start-entry" class="d-inline-block mr-auto">
+                <i class="fas fa-chevron-left"></i>
+            </a>
+            <a class="d-inline-block ml-auto">
+                <a [routerLink]="['/workout/workout-history']" class="ml-auto">
+                    <div class="btn btn-primary small-btn">Submit</div>
+                </a>
+            </a>
+        </li>
+    </ul>
+</div>

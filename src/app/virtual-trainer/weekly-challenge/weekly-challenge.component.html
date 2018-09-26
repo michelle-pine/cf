@@ -1,0 +1,34 @@
+<div class="card info-card mb-4 mx-auto" *ngIf="challenges.selectedChallenge">
+  <div class="embed-responsive embed-responsive-16by9" *ngIf="challenges.selectedChallenge.attachments.video">
+      <iframe [src]='photoURL(challenges.selectedChallenge.attachments.link)' frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+   
+  </div>
+  <div class="card-header d-flex align-items-center">
+
+    <div class="thumbnail thumbnail-img mr-2" [style.backgroundImage]="'url('+ challenges.selectedChallenge.image +')'">
+
+    </div>
+    <div class="caption pl-2">
+      <h5>{{ challenges.selectedChallenge.name}}</h5>
+    </div>
+    <div class="ml-auto shadow-hover">
+      <button class="btn btn-primary">Record</button>
+    </div>
+  </div>
+  <div class="list-group list-group-flush">
+    <div class="list-group-item">
+      {{challenges.selectedChallenge.description}}
+    </div>
+    <div class="list-group-item">
+      <strong>Duration:&nbsp;</strong>
+      <i class="link-styling fas fa-clock"></i>&nbsp;{{challenges.selectedChallenge.duration}} minutes
+    </div>
+    <div class="list-group-item" *ngIf="!challenges.selectedChallenge.attachments.video">
+      <strong>PDF Instructions:&nbsp;</strong>
+      <a href="{{challenges.selectedChallenge.attachments.link}}" target="_blank">
+        <i class="fas fa-file-pdf"></i>&nbsp;Open</a>
+    </div>
+  </div>
+
+
+</div>

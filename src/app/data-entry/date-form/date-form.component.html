@@ -1,0 +1,10 @@
+
+<div class="input-group date-form-group">
+  <input type="date" class="form-control date-form" [ngModel]="selectedDate" (ngModelChange)="selectDate($event)" />
+
+  <div class="input-group-append" (click)="prompt($event)">
+    <span class="input-group-text half-expand expand" id="basic-addon2">
+      <i class="fas fa-calendar"></i>
+    </span>
+  </div>
+</div>

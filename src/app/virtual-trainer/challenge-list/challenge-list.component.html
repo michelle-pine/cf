@@ -1,0 +1,26 @@
+<div class="card info-card mb-4 mx-auto">
+    <div class="card-header d-flex align-items-center">
+      <h5>Weekly Challenges</h5>
+  
+  
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item p-3 d-flex align-items-center" *ngFor="let challenge of challenges.challenges"> 
+        <div class="thumbnail thumbnail-img mr-2" [style.backgroundImage]="'url('+ challenge.image +')'" >
+          <div class="thumbnail thumbnail-icon" style="color:rgba(255,255,255,0.7)" *ngIf="challenge.attachments.video">
+            <i class="fas fa-play"></i>
+          </div>
+        </div>
+        <div class="caption pl-2">
+          <h6>{{ challenge.name }}</h6>
+          {{ challenge.description }}
+        </div>
+        <div class="accent-icon ml-auto shadow-hover">
+          <a (click)="challenges.setSelected(challenge)" routerLink="/weekly-challenges/selected-challenge"> <i class="fas fa-arrow-right"></i></a>
+        </div>
+  
+  
+      </li>
+    </ul>
+  </div>
+  

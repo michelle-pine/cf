@@ -1,0 +1,60 @@
+<a [routerLink]="['/workout/video-workout']">
+  <div class="card info-card mb-4 mx-auto mt-3 option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-2">
+              <i class="fas fa-play fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>Video Workout</h6>
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>
+<a [routerLink]="['/weekly-challenges']">
+  <div class="card info-card mb-4 mx-auto option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-2">
+              <i class="fas fa-bullhorn fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>Weekly Challenges </h6>
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>
+<a [routerLink]="['/workout/workout-type']">
+  <div class="card info-card mb-4 mx-auto option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-1">
+              <i class="fas fa-check-circle fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>Select Workout</h6>
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>
+<a [routerLink]="['/workout/workout-history']" (click)="dateService.allowWeeklySelection(event)">
+  <div class="card info-card mb-4 mx-auto option-card">
+      <div class="card-header d-flex align-items-center">
+          <div class="thumbnail thumbnail-icon mr-1">
+              <i class="fas fa-history fa-fw"></i>
+          </div>
+          <div class="caption pl-2">
+              <h6>View Workout History</h6>
+          </div>
+          <div class="accent-icon ml-auto shadow-hover">
+              <i class="fas fa-arrow-right"></i>
+          </div>
+      </div>
+  </div>
+</a>

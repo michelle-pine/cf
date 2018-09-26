@@ -1,0 +1,278 @@
+@import "../../variables.scss";
+.calendar {
+  width: calc(100vw - 200px);
+  margin-left: 200px;
+  position: static;
+  z-index: 98;
+  bottom: 0;
+  padding: 10px;
+  left: 0;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  @include pat-shadow(0.1);
+  @include transition;
+  a {
+    color: #333;
+  }
+
+  h5 {
+    font-size: $pat-calendar-header;
+    display: inline-block;
+    a {
+      color: $pat-calendar-accent;
+    }
+  }
+  .cal-options {
+    position: absolute;
+    float: right;
+    text-align: right;
+    right: 0;
+    margin-right: 10px;
+
+    a {
+
+      color:$pat-accent-light;
+      &,
+      &:hover {
+        height: 100%;
+        width: 100%;
+        text-align: center;
+        text-decoration: none;
+        box-shadow: none !important;
+      }
+      svg {
+    
+        max-width: 100%;
+        max-height: 100%;
+        line-height: 100%;
+        text-align: center;
+        padding: 5px;
+        cursor:pointer;
+        font-size: 25px;
+        line-height: 25px;
+        border: $pat-border-abb;
+        border-radius: 5px;
+      }
+    }
+  }
+  .current-month {
+    width: 100%;
+    h5 {
+      font-size: $pat-current-month;
+    }
+  }
+
+  .calendar-day,
+  .date {
+    cursor: pointer;
+  }
+  .dates {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+
+    .date {
+      border-radius: 100%;
+      background: $pat-unselected-date;
+      height: 9vw;
+      a {
+        width: 100%;
+        height: 100%;
+        line-height: 35px;
+        border-radius: 50%;
+      }
+      &:hover {
+        @include pat-shadow(0.1);
+      }
+    }
+    .today {
+      border: $pat-today-border;
+      color: $pat-today-color;
+    }
+    .disabled {
+      border: $pat-disabled-date-border !important;
+    }
+  }
+  .selected-date {
+    background: $pat-selected-date-bg !important;
+    color: $pat-selected-date-text !important;
+    &:before {
+      content: "+";
+      position: absolute;
+      font-size: 20px;
+      color: $pat-plus-color;
+      font-weight: 900;
+      line-height: 6px;
+      width: 15px;
+      height: 15px;
+      background: $pat-plus-bg;
+      border-radius: 50%;
+      line-height: 12px;
+      border: $pat-plus-border;
+    }
+  }
+
+  .days {
+    .day {
+      font-size: $pat-day-of-week;
+    }
+  }
+
+  .disabled,
+  .big-small-disabled {
+    background: transparent !important;
+    cursor: not-allowed;
+    color: $pat-disabled-date-color !important;
+  }
+
+  .days,
+  .dates {
+    .day,
+    .date {
+      text-align: center;
+      display: block;
+      max-width: 35px;
+      max-height: 35px;
+      width: 9vw;
+      margin-left: 0.3vw;
+      margin-right: 0.3vw;
+    }
+  }
+
+  .hide {
+    .selected-date:before {
+      display: none;
+    }
+  }
+
+  .medium-cal {
+    height: 90px;
+    overflow: visible;
+    transition: height 0.3s;
+    .selected-date::before {
+      transform: translate(-100%, -50%);
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        transform: translate(-100%, -50%);
+      }
+      @supports (-ms-ime-align: auto) {
+        transform: translate(-100%, -50%);
+      }
+    }
+  }
+  .calendar_container {
+    font-size: 12px;
+    height: 240px;
+    overflow: hidden;
+    transition: height 0.3s;
+    .big-today {
+      border: $pat-today-border !important;
+      z-index: 99999 !important;
+      color: $pat-today-color;
+    }
+    .selected-date::before {
+      transform: translate(-150%, -10%);
+      @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        transform: translate(0, 0);
+      }
+      @supports (-ms-ime-align: auto) {
+        transform: translate(0, 0);
+      }
+    }
+
+    table {
+      tr {
+        line-height: 35px !important;
+      }
+      th,
+      td {
+        width: 35px !important;
+        padding: 0 !important;
+      }
+      td {
+        &:hover {
+          @include pat-shadow(0.1);
+        }
+        a {
+          width: 40px;
+          height: 35px;
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  .display-big-cal {
+    height: 260px;
+    overflow: hidden;
+  }
+
+  .hide-expand-cal,
+  .totally-minimized {
+    svg {
+      opacity: 0;
+      width: 0px !important;
+      overflow: hidden !important;
+      visibility: hidden;
+      display: none;
+    }
+  }
+  .hide-md-cal {
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+
+  .arrow {
+    position: absolute;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    width: 20px;
+    line-height: 20px;
+    color: $pat-cal-btn-color;
+    height: 20px;
+    font-size: 20px;
+    &.prev-month {
+      float: left;
+      margin-left: 60px;
+    }
+    &.next-month {
+      float: right;
+      margin-right: 60px;
+    }
+  }
+  #big-calendar-inner {
+    width: 300px;
+  }
+
+  .select-today {
+    position: absolute;
+    float: left;
+    left: 0;
+    padding: 3px;
+    font-size: 12px;
+    color:$pat-accent-dark;
+    text-transform: uppercase;
+    border: $pat-border-abb;
+    border-radius: 5px;
+    margin-left: 30px;
+    cursor: pointer;
+    @media (min-width: 768px) {
+      margin-left: 210px;
+    }
+  }
+  @media (max-width: 768px) {
+    width: 100vw;
+    margin-left: 0;
+  }
+}
+
+.hide {
+  height: 0px !important;
+  overflow: hidden !important;
+}
+
+.remove {
+  display: none;
+}

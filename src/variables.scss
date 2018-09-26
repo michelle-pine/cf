@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,600");
+
+//SHARED VARIABLES -----------------------------------------
+//default variables for either application, unless otherwise
+//specified
+
+$font-stack: "Open Sans", Helvetica, Arial, sans-serif;
+$font-size: 14px;
+$text-color: #333;
+$bg: rgb(248, 248, 248);
+$inverse: white; //color of text when background gets darker
+$card: white;
+$card-header: #f3f3f3;
+$border: #ddd;
+$border-width: 1px;
+$border-abb: $border-width solid $border;
+$placeholder: #6c757d; //color of placeholder text in a form
+
+@mixin transition {
+  transition: all 0.3s;
+}
+
+@mixin shadow($opacity) {
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, $opacity),
+    0 2px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, $opacity),
+    0 2px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+//PAT VARIABLES --------------------------------------------
+//VARIABLE DEFS THAT DEFAULT TO SHARED VALUES - only change these if you want
+//to "disconnect" prov from one of the shared variables; ex) changing the font-stack
+//here will make it so prov has a unique font stack that cannot be altered
+//by the shared variables
+
+$pat-bg: $bg;
+$pat-inverse: $inverse;
+$pat-text-color: $text-color;
+$pat-font-stack: $font-stack;
+$pat-font-size: $font-size;
+$pat-card: $card;
+$pat-card-header: $card-header;
+$pat-border: $border;
+$pat-border-width: $border-width;
+$pat-border-abb: $border-abb;
+
+//UNIQUE PAT VARIABLES  - change at will without affecting prov
+
+//accent colors
+$pat-accent-light: #41B6E6;
+$pat-accent-dark:#003087;
+$pat-accent-hover: darken($pat-accent-light, 10%);
+
+
+
+//element specific font-sizes
+$pat-card-header-font-size: 17px;
+$pat-card-header-color:$pat-accent-dark;
+$pat-caption-desc-font-size: 11px;
+$pat-caption-title-font-size: 15px;
+
+//buttons 
+$pat-button-bg:$pat-accent-light;
+$pat-button-color:$inverse;
+$pat-button-hover-bg:$pat-accent-hover;
+$pat-button-hover-border:darken($pat-accent-light, 15%);
+
+
+//element specific colorings
+$pat-option-card-header: #fff;
+$progress-bar-text-color: $pat-text-color;
+
+//icons
+$pat-icon-fill: transparentize($pat-accent-light, 0.5);
+$pat-icon-outline: $pat-accent-light;
+$pat-icon-stroke-width: 12px;
+
+//navbar
+$pat-nav-bg: $pat-card;
+$pat-nav-border: $pat-border-abb;
+$pat-nav-font-size: $pat-text-color;
+$pat-nav-font-color: $pat-accent-dark;
+
+//sidebar
+$sidebar-color: $pat-accent-dark;
+$pat-sidebar-bg: $pat-card;
+$pat-sidebar-link-hover-bg: $pat-accent-light;
+$pat-sidebar-link-hover-color: $inverse;
+$pat-sidebar-active-color: $pat-accent-light;
+
+//workout selection
+$pat-pin-color: $pat-text-color;
+$pat-muted-pin: rgb(184, 184, 184);
+$pat-selected-workout: $pat-accent-light;
+
+//workout history
+$pat-history-label-bg: rgb(243, 243, 243);
+
+//calendar
+$pat-calendar-accent: $pat-accent-light;
+$pat-calendar-header: 17px;
+$pat-current-month: 15px;
+$pat-selected-date-bg: $pat-accent-light;
+$pat-selected-date-text: $inverse;
+$pat-unselected-date: lightgrey;
+$pat-plus-bg: white;
+$pat-plus-color: $pat-text-color;
+$pat-plus-border: $pat-border-abb;
+$pat-today-border: 1px solid $pat-accent-light;
+$pat-today-color: $pat-accent-light;
+$pat-day-of-week: 12px;
+$pat-disabled-date-color: #b9b9b9;
+$pat-disabled-date-border: $pat-border-abb;
+$pat-cal-btn-color:$pat-accent-light;
+
+//multiselect boxes
+$pat-checkbox-color: $pat-accent-light;
+$pat-tag-color: $pat-accent-light;
+$pat-tag-text: $inverse;
+
+@mixin icon-coloring {
+  stroke-width: $pat-icon-stroke-width;
+  fill: $pat-icon-fill;
+  stroke: $pat-icon-outline;
+}
+
+@mixin inverse-icon-coloring {
+  fill: $pat-icon-outline;
+}
+
+@mixin pat-shadow($opacity) {
+  @include shadow($opacity);
+}
+
+@mixin pat-shadow-important($opacity) {
+  -webkit-box-shadow: 0 1px 5px 0 rgba(0, 0, 0, $opacity),
+    0 2px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 1px 5px 0 rgba(0, 0, 0, $opacity),
+    0 2px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+@mixin pat-full-border {
+  border: $pat-border-width solid $pat-border;
+}
+//PROV VARIABLES -----------------------------------------
+//VARIABLE DEFS THAT DEFAULT TO SHARED VALUES - only change these if you want
+//to "disconnect" prov from one of the shared variables; ex) changing the font-stack
+//here will make it so prov has a unique font stack that cannot be altered
+//by the shared variables
+$prov-bg: $bg;
+$prov-inverse: $inverse;
+$prov-text-color: $text-color;
+$prov-font-stack: $font-stack;
+$prov-font-size: $font-size;
+$prov-card: $card;
+$prov-card-header: $card-header;
+$prov-border: $border;
+$prov-border-width: $border-width;
+
+//UNIQUE PROV VARIABLES - change at will without affecting pat
+$prov-accent-dark: #003087;
+$prov-accent-light: #41b6e6;
+$prov-accent-attention: #ffc107;
+$prov-accent-success: #739600;
+
+$prov-max-content-width: 1000px;
+
+$prov-navbar-height: 59px;
+$prov-navbar-bg: white;
+$prov-navbar-color: $prov-accent-dark;
+$prov-navbar-font-size: 14px;
+$prov-navbar-hover-color: gray;
+
+$prov-sidebar-color: $prov-inverse;
+$prov-sidebar-width: 90px;
+$prov-sidebar-bg: $prov-accent-light;
+$prov-sidebar-font-size: 2em;
+
+@mixin prov-shadow($opacity) {
+  @include shadow($opacity);
+}
+
+@mixin filter {
+  position: relative;
+  color: $prov-text-color;
+  min-width: 200px;
+  width: 20vw;
+  border-radius: 5px;
+  background-color: rgba(254, 254, 254, 1);
+  padding: 5px 10px 5px 10px;
+  line-height: 25px;
+  font-size: 13px;
+  box-shadow: 2px 2px 10px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s;
+  outline: none;
+  border: 1px solid rgba(255, 255, 255, 0);
+}
+
+@mixin search-icon {
+  content: url("/Prov/Content/search.svg");
+  position: absolute !important;
+  display: inline-block;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 15px;
+  margin-top: 18px;
+  z-index: 1002;
+  color: $prov-text-color;
+  width: 15px;
+  line-height: 25px;
+}
+
+@mixin accent-btn {
+  color: $inverse;
+  background: $prov-accent-light;
+}
+
+@mixin accent-btn-important {
+  color: $inverse !important;
+  background: $prov-accent-light !important;
+}
+
+//EXTRA UTILITIES  --------------------------------
+
+@mixin fadeOnLoad {
+  -webkit-animation: fadein 2s;
+  -moz-animation: fadein 2s;
+  -ms-animation: fadein 2s;
+  -o-animation: fadein 2s;
+  animation: fadein 2s;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

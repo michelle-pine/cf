@@ -1,0 +1,51 @@
+<div class="card info-card mb-4 mx-auto data-entry">
+  <div class="custom-progress" style="background: linear-gradient(to right,rgba(0, 123, 255, 1) 0%,rgba(0, 123, 255, 1) 5%, rgba(255,255,255,1) 5%);"></div>
+  <div class="card-header d-flex align-items-center">
+
+      <h5>Let's Get Started! (0 / 5)</h5>
+  
+  </div>
+  <div class="card-block p-4">
+      <form>
+          <div class="form-group row mb-4">
+              <label for="date-to-select" class="col-form-label col-sm-4 mb-2">{{dateString}}</label>
+              <div class="col-sm-8">
+                  <app-date-form></app-date-form>
+              </div>
+          </div>
+
+        
+          <div class="row feeling">
+              <label for="feeling" class="col-form-label col-sm-4">How have you been feeling?</label>
+              <div class="col-sm-8">
+                  <div class="input-group mb-2 d-flex flex-nowrap slider-container">
+                      <div class="input-group-prepend">
+                          <span class="input-group-text face" id="sad-face">
+                            <app-smiley-left></app-smiley-left>
+                          </span>
+                      </div>
+                      <nouislider name="feeling" class="feeling" style="width:100%; z-index:95;" [config]="slider.feelingOption" [(ngModel)]="todayEmotion"></nouislider>
+                      <div class="input-group-append face">
+                          <span class="input-group-text" id="happy-face">
+                              <app-smiley-right></app-smiley-right>
+                          </span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+        
+      </form>
+  </div>
+  <ul class="list-group list-group-flush entry-arrows">
+      <li class="list-group-item d-flex align-items-center">
+          <a routerLink="/workout/select-activity" class="d-inline-block mr-auto">
+              <i class="fas fa-chevron-left"></i>
+          </a>
+          <a class="d-inline-block ml-auto">
+            <a routerLink="{{link}}" class="ml-auto load-slider">
+             <i class="fas fa-chevron-right"></i>
+            </a>
+          </a>
+      </li>
+  </ul>
+</div>

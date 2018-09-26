@@ -1,0 +1,39 @@
+@import "../../../variables";
+
+.history-table {
+  h6 {
+    margin-bottom: 0px !important;
+    line-height: 30px;
+  }
+  .accent-icon {
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    font-size: 15px;
+  }
+
+  .row {
+    line-height: 22px;
+  }
+
+  .left-col {
+    padding: 10px;
+    border-bottom: $pat-border-abb;
+    background: $pat-history-label-bg;
+    border-right: $pat-border-abb;
+    border-left: 0;
+  }
+
+  .right-col {
+    padding: 10px;
+    border-bottom: $pat-border-abb;
+    border-left: $pat-border-abb;
+    svg {
+      width: 30px;
+      height: 30px;
+      margin-top: -3px;
+      margin-left: -5px;
+    }
+  }
+}
+

@@ -1,0 +1,75 @@
+<div class="card info-card mb-3 mx-auto">
+  <div class="card-header d-flex align-items-center">
+    <h5 class="d-inline">Record a workout for:</h5>
+    <a routerLink="/workout/start-entry" class="ml-auto load-slider">
+      <div class="btn btn-primary small-btn">Next</div>
+    </a>
+  </div>
+  <div class="card-block p-2 ">
+    <form class="form-row col-12 date-to-select">
+
+      <app-date-form></app-date-form>
+
+
+
+
+    </form>
+
+
+
+  </div>
+</div>
+
+
+<div class="card info-card mb-3 mx-auto pinned">
+  <div class="card-header d-flex align-items-center">
+
+    <h5>
+      <i class="fas fa-history"></i>&nbsp;&nbsp;Recent Activities</h5>
+  </div>
+  <div class="card-body">
+    <angular2-multiselect [data]="recent" [(ngModel)]="selectedRecent" [settings]="recentSettings">
+    </angular2-multiselect>
+  </div>
+</div>
+
+<div class="card info-card mb-3 mx-auto">
+  <div class="card-header d-flex align-items-center">
+    <h5>
+      <i class="fas fa-child"></i>&nbsp;&nbsp;Exercises</h5>
+  </div>
+  <div class="card-body">
+    <angular2-multiselect [data]="exercises" [(ngModel)]="recentExercises" [settings]="exerciseSettings">
+    </angular2-multiselect>
+  </div>
+</div>
+
+
+<div class="card info-card mb-3 mx-auto">
+  <div class="card-header d-flex align-items-center">
+
+    <h5>
+      <i class="fas fa-futbol"></i>&nbsp;&nbsp;Sports</h5>
+  </div>
+  <div class="card-body">
+
+
+    <angular2-multiselect [data]="sports" [(ngModel)]="selectedSports" [settings]="sportsSettings">
+    </angular2-multiselect>
+  </div>
+</div>
+
+
+<div class="card info-card mb-3 mx-auto">
+  <div class="card-header d-flex align-items-center">
+
+    <h5>
+      <i class="fas fa-bicycle"></i>&nbsp;&nbsp;Everyday Activities</h5>
+  </div>
+  <div class="card-body">
+
+
+    <angular2-multiselect [data]="activities" [(ngModel)]="selectedActivities" [settings]="activitiesSettings">
+    </angular2-multiselect>
+  </div>
+</div>

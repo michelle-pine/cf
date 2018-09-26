@@ -1,0 +1,60 @@
+<nav class="col-md-3 sidebar">
+    <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+            <li class="nav-item d-block d-md-none">
+                <a class="nav-link user">
+                    <ng-container >
+                          <i class="fas fa-heart"></i> &nbsp;&nbsp;Michelle Pine
+                    </ng-container>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+                    <i class="fas fa-home"></i> &nbsp;&nbsp;Home
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/myprofile']" routerLinkActive="active">
+                    <i class="fas fa-user"></i> &nbsp;&nbsp;My Profile
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link d-flex align-items-center" [routerLink]="['/workout']" routerLinkActive="active">
+                    <i class="fas fa-child"></i> &nbsp;&nbsp;Workout
+                    <span class="badge badge-secondary ml-2">5 Entry
+                        <br>Streak</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/progress']" routerLinkActive="active">
+                    <i class="fas fa-chart-line"></i> &nbsp;&nbsp;Progress
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/trophies']" routerLinkActive="active">
+                    <i class="fas fa-trophy"></i> &nbsp;&nbsp;Trophies
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/weekly-challenges']" routerLinkActive="active">
+                    <i class="fas fa-bullhorn"></i> &nbsp;&nbsp;Weekly Challenges
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/jokes']" routerLinkActive="active">
+                    <i class="fas fa-smile"></i> &nbsp;&nbsp;Jokes/Quotes
+                </a>
+            </li>
+
+            <li class="nav-item d-block d-md-none">
+                <a class="nav-link" href="./auth/logout">
+                    <i class="fas fa-sign-out-alt"></i> &nbsp;&nbsp;Logout
+                </a>
+            </li>
+
+ 
+           
+        </ul>
+    </div>
+</nav>

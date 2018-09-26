@@ -1,0 +1,42 @@
+
+@import '../../../variables';
+
+
+.muted-pin {
+  color: $pat-muted-pin !important;
+  fill: $pat-muted-pin !important;
+}
+
+.pin {
+  color: $pat-pin-color;
+  fill: $pat-pin-color;
+}
+
+
+input {
+  &[type="checkBox"] {
+    display: none;
+  }
+}
+input[type="checkBox"] {
+  display: none;
+
+  + label {
+    padding: 5px 10px;
+    cursor: pointer;
+    min-width: 50px;
+    text-align: center;
+    border: 1px solid #ddd;
+    box-shadow: 0px 0px 20px -7px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    transition: 0.3s all;
+  
+  }
+  &:checked {
+    + label {
+      background: $pat-selected-workout;
+      color: $inverse;
+    }
+  }
+}
+

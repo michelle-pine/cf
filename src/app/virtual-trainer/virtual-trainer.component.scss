@@ -1,0 +1,43 @@
+.speech-bubble {
+  position: relative;
+  margin-left: 50px;
+  font-size: 13px;
+  background: #ebebeb;
+  border-radius: 0.4em;
+  width: 60%;
+  height: 100%;
+  min-height: 85px;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 0;
+    height: 0;
+    border: 40px solid transparent;
+    border-right-color: #ebebeb;
+    border-left: 0;
+    border-top: 0;
+    margin-top: -20px;
+    margin-left: -40px;
+  }
+  .trainer-img {
+    position: relative;
+    height: 80px;
+    width: 80px;
+    justify-content: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    background-image: url("http://firstaidertraining.org.uk/wp-content/uploads/2017/09/anon.png");
+  }
+}
+
+.goal-header {
+  background: rgb(235, 235, 235);
+}
+
+.thumbnail img {
+  height: 100%;
+}
